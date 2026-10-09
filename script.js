@@ -3,7 +3,7 @@
 const WHATSAPP_NUMERO = "55DDDNUMERO";
 const MENSAGEM_PADRAO = "Olá, Flávia! Vi seu site e gostaria de saber mais sobre seus quadros.";
 
-// Títulos personalizados para as obras (pode personalizar conforme adicionar novos nomes)
+// Títulos personalizados para as obras
 const TITULOS_ESPECIAIS = {
   1: "Lua e vinil",
   2: "Mulher e ibis",
@@ -17,14 +17,14 @@ const TITULOS_ESPECIAIS = {
 // QUANTIDADE TOTAL DE ESPAÇOS RESERVADOS
 const TOTAL_OBRAS = 20; 
 
-// Geração automática das obras (de obra-01.jpg até obra-20.jpg)
+// Geração automática das obras (buscando diretamente na raiz: obra-01.jpg até obra-20.jpg)
 const OBRAS = Array.from({ length: TOTAL_OBRAS }, (_, index) => {
   const numero = String(index + 1).padStart(2, "0"); // Formata 01, 02... 20
   const numInt = index + 1;
   const titulo = TITULOS_ESPECIAIS[numInt] || `Obra ${numero}`;
   
   return {
-    arquivo: `images/obra-${numero}.jpg`,
+    arquivo: `obra-${numero}.jpg`, // Caminho sem a pasta images/
     titulo: titulo,
     alt: `Quadro ${titulo} por Flávia Rebouças`
   };
@@ -47,6 +47,16 @@ if (elZapHero) elZapHero.href = zap(MENSAGEM_PADRAO);
 const elAno = document.getElementById("ano");
 if (elAno) elAno.textContent = new Date().getFullYear();
 
+// Corrigir os caminhos das imagens da Hero para a raiz
+const imgColA = document.querySelector(".col-a");
+if (imgColA) imgColA.src = "obra-02.jpg";
+
+const imgColB = document.querySelector(".col-b");
+if (imgColB) imgColB.src = "obra-04.jpg";
+
+const imgColC = document.querySelector(".col-c");
+if (imgColC) imgColC.src = "obra-06.jpg";
+
 // Elementos da galeria e lightbox
 const galeria = document.getElementById("galeria");
 const lb = document.getElementById("lightbox");
@@ -64,7 +74,7 @@ if (galeria) {
     b.className = "quadro";
     b.setAttribute("aria-label", `Ampliar ${o.titulo}`);
     
-    // Se a imagem não for encontrada na pasta, oculta o quadro automaticamente para não quebrar a tela
+    // Se a imagem não existir na raiz do repositório, oculta o quadro para não quebrar a tela
     b.innerHTML = `
       <div class="moldura">
         <img src="${o.arquivo}" alt="${o.alt}" loading="lazy" onerror="this.closest('.quadro').style.display='none';">
