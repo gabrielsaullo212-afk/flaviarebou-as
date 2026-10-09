@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flávia Rebouças — Artes Plásticas</title>
+  <meta name="description" content="Quadros pintados à mão por Flávia Rebouças. Veja as obras e peça o seu pelo WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="marca" href="#inicio">Flávia Rebouças</a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#obras">Obras</a>
+      <a href="#sobre">Sobre</a>
+      <a class="menu-zap" href="#contato">Encomendar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <p class="hero-chamada">Artes plásticas</p>
+        <h1>Flávia<br>Rebouças</h1>
+        <p class="hero-sub">Quadros pintados à mão, cheios de cor, luz e personalidade.</p>
+        <div class="hero-botoes">
+          <a class="botao" href="#obras">Ver as obras</a>
+          <a class="botao botao-zap" id="zap-hero" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-colagem" aria-hidden="true">
+        <img class="col col-a" src="images/obra-02.jpg" alt="">
+        <img class="col col-b" src="images/obra-04.jpg" alt="">
+        <img class="col col-c" src="images/obra-06.jpg" alt="">
+      </div>
+    </section>
+
+    <div class="faixa" aria-hidden="true">
+      <div class="faixa-trilha">
+        <span>pintura</span><span>cor</span><span>retrato</span><span>luz</span><span>tela</span><span>arte</span>
+        <span>pintura</span><span>cor</span><span>retrato</span><span>luz</span><span>tela</span><span>arte</span>
+      </div>
+    </div>
+
+    <section class="obras" id="obras" aria-labelledby="titulo-obras">
+      <h2 id="titulo-obras">As obras</h2>
+      <p class="obras-intro">Toque em um quadro para ver maior e perguntar sobre ele.</p>
+      <div class="parede" id="galeria"></div>
+    </section>
+
+    <section class="sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="sobre-caixa">
+        <h2 id="titulo-sobre">Sobre a artista</h2>
+        <p>Flávia Rebouças pinta retratos, bichos, paisagens e cenas do dia a dia com traço firme e cores fortes. Cada quadro nasce do olhar de quem vai viver com ele.</p>
+        <p>Quer um retrato do seu pet, da sua família ou uma obra para o seu espaço? Tamanho, cores e tema podem ser combinados com ela.</p>
+        <p><a href="https://www.instagram.com/af.reboucas_art/" target="_blank" rel="noopener">Veja mais no Instagram @af.reboucas_art</a></p>
+      </div>
+    </section>
+
+    <section class="contato" id="contato" aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Vamos pintar o seu quadro?</h2>
+      <p>Conte o que você imagina ou qual obra chamou sua atenção.</p>
+      <a class="botao botao-zap botao-grande" id="zap-principal" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>© <span id="ano"></span> Flávia Rebouças. Todos os direitos reservados.</p>
+  </footer>
+
+  <a class="zap-flutuante" id="zap-flutuante" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.3 4 14.9c0 2.3.7 4.5 1.9 6.3L4 28l7-1.8a12 12 0 0 0 5 1.1c6.6 0 12-5.3 12-11.9S22.6 3 16 3Zm0 21.6c-1.6 0-3.2-.4-4.5-1.2l-.4-.2-4.1 1.1 1.1-4-.3-.4a9.600 9.600 0 0 1-1.500-5c0-5.300 4.400-9.600 9.700-9.600s9.700 4.300 9.700 9.600-4.400 9.700-9.700 9.700Zm5.300-7.200c-.3-.1-1.700-.8-2-.9-.3-.1-.5-.1-.7.1l-.9 1.100c-.2.200-.3.200-.6.100-1.700-.8-2.800-1.500-3.900-3.400-.3-.5.3-.5.8-1.600.1-.2 0-.4 0-.5l-.9-2.100c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.400s1 2.800 1.200 3c.1.200 2 3.100 4.900 4.300 1.800.8 2.500.9 3.400.7.600-.1 1.700-.7 2-1.400.2-.7.200-1.200.2-1.400-.1-.1-.3-.2-.6-.3Z"/></svg>
+  </a>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Obra ampliada" hidden>
+    <button class="lb-fechar" id="lb-fechar" aria-label="Fechar">×</button>
+    <button class="lb-nav lb-ant" id="lb-ant" aria-label="Anterior">‹</button>
+    <button class="lb-nav lb-prox" id="lb-prox" aria-label="Próximo">›</button>
+    <figure class="lb-figura">
+      <img id="lb-img" alt="">
+      <figcaption id="lb-legenda"></figcaption>
+      <a class="botao botao-zap" id="lb-zap" href="#" target="_blank" rel="noopener">Perguntar sobre esta obra</a>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
